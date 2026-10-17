@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+videojoiner.log
+_test_clips/
+build/
+dist/
+*.spec

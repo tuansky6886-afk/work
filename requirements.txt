@@ -1,0 +1,7 @@
+PyQt6>=6.6
+# Fallback if ffmpeg isn't on PATH; safe to omit if you already have ffmpeg installed.
+imageio-ffmpeg>=0.4
+# Speech-to-text for the Subtitles tab's auto-transcribe feature.
+faster-whisper>=1.0
+# YouTube caption tracks for the YouTube Lyrics tab.
+youtube-transcript-api>=1.2.4
