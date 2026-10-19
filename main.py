@@ -13,7 +13,6 @@ import sys
 import traceback
 from pathlib import Path
 
-from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import QApplication, QMessageBox
 
 # When PyInstaller-frozen, `__file__` resolves inside the temporary
@@ -50,18 +49,14 @@ def _excepthook(exc_type, exc_value, exc_tb) -> None:
 sys.excepthook = _excepthook
 
 
-_FONT_FAMILIES = ["Aptos", "Segoe UI Variable Text", "Segoe UI", "Arial"]
-
-
 def main() -> int:
     app = QApplication(sys.argv)
-    font = QFont()
-    font.setFamilies(_FONT_FAMILIES)
-    font.setPointSize(10)
-    app.setFont(font)
 
     from app.main_window import MainWindow
+    from app.style import apply_font, install_theme
 
+    apply_font(app)
+    install_theme(app)
     window = MainWindow()
     window.show()
     return app.exec()

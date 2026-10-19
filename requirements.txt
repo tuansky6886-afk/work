@@ -5,3 +5,5 @@ imageio-ffmpeg>=0.4
 faster-whisper>=1.0
 # YouTube caption tracks for the YouTube Lyrics tab.
 youtube-transcript-api>=1.2.4
+# YouTube length lookup and Gemini calls for the Scene Prompts tab.
+requests>=2.31

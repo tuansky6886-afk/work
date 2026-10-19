@@ -87,6 +87,27 @@ PC — ffmpeg/libass silently falls back to a default font otherwise.
 A video with captions turned off, or an age-restricted video, cannot
 be read this way.
 
+## Usage — Scene Prompts tab
+
+1. Paste a public YouTube link and a Gemini API key. The key is saved
+   on this PC the next time you scan. Pick a model if the default one
+   is not on your key.
+2. Click "Scan Scenes". The app reads the video length, cuts the
+   caption track into 15-second windows, then asks Gemini to watch
+   each window. The video file is not downloaded.
+3. A video longer than 5 minutes keeps only the first 20 scenes. The
+   app asks before those 20 scenes start, because every scene is its
+   own Gemini call. "Cancel" stops after the scene that is already in
+   flight and keeps whatever was written.
+4. Copy the prompt. Each scene has the picture, the spoken line, a
+   keyframe prompt, and a Grok video prompt. Render each scene as its
+   own Image-to-Video clip, then join the clips in order.
+
+The last few seconds are left out when they are shorter than 15. A
+video with no captions is still scanned; those scenes are marked as
+having no speech. Private and unlisted videos cannot be watched this
+way.
+
 ## Usage — Add Music tab
 
 1. Choose a video and a music file (mp3, wav, m4a, and the other common
